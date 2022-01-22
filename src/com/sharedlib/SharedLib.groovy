@@ -1,4 +1,4 @@
-package com.shared-lib
+package com.sharedlib
 
 class SharedLib implements Serializable {
 
