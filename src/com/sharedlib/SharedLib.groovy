@@ -14,7 +14,7 @@ class SharedLib implements Serializable {
             script.sh "docker build -t $image ."
             // script.sh "echo $script.PWD | docker login -u $script.USER --password-stdin $repo"
             // script.sh "docker push $image"
-            echo "$image"
+            script.echo "$image"
         }
     }
 
