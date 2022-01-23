@@ -12,10 +12,8 @@ class SharedLib implements Serializable {
         script.echo "building Docker image..."
         script.withCredentials([script.usernamePassword(credentialsId: 'nexus-user-creds', passwordVariable: 'PWD', usernameVariable: 'USER')]) {
             script.sh "docker build -t $image ."
-            // script.sh "echo $script.PWD | docker login -u $script.USER --password-stdin $repo"
-            // script.sh "docker push $image"
-            script.echo "$image"
-            script.echo "$repo"
+            script.sh "echo $script.PWD | docker login -u $script.USER --password-stdin $repo"
+            script.sh "docker push $image"
         }
     }
 
